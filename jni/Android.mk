@@ -71,7 +71,7 @@ LOCAL_SRC_FILES := \
     alc/backends/opensl.cpp
 #   alc/mixer/mixer_neon.cpp.neon \
     
-LOCAL_CFLAGS := -fexceptions -DANDROID -pipe -integrated-as -fno-plt -O3 -flto -mllvm -polly -mllvm -polly-vectorizer=stripmine -mllvm -polly-invariant-load-hoisting -mllvm -polly-run-inliner -mllvm -polly-run-dce -fwhole-program-vtables
+LOCAL_CFLAGS := -fPIC -fexceptions -DANDROID -pipe -integrated-as -fno-plt -O3 -flto -mllvm -polly -mllvm -polly-vectorizer=stripmine -mllvm -polly-invariant-load-hoisting -mllvm -polly-run-inliner -mllvm -polly-run-dce -flto=auto -fwhole-program-vtables
 LOCAL_LDLIBS := -ldl -landroid -llog -lOpenSLES
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/include $(LOCAL_PATH)/include/AL $(LOCAL_PATH)/alc $(LOCAL_PATH)/common
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/include
